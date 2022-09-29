@@ -23,7 +23,7 @@ const Input = ({label, iconName, error, onFocus=()=>{}, ...props}) => {
 
             <Text style={estilos.inputLabel}>{label}</Text>
 
-            <View style={[estilos.inputContainer, {borderColor: error ? COLORS.errorRed : COLORS.light }]}>
+            <View style={[estilos.inputContainer, {borderBottomColor: error ? COLORS.errorRed : COLORS.blue }]}>
 
                 <Icon name={iconName} style={estilos.icon} />
 

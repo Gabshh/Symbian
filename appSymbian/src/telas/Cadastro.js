@@ -113,42 +113,42 @@ const Cadastro = () => {
 
             <View style={estilos.viewForm}>
 
-            <Input  label="NOME"
+            <Input  label="Nome"
                     iconName="account"
                     error={errors.nome}
                     onFocus={ ()=>(handlerErrors(null, 'nome')) }    
                     onChangeText={ (text) => handlerOnChange(text, 'nome' ) }
             />
 
-            <Input  label="E-MAIL"
+            <Input  label="E-mail"
                     iconName="email"
                     error={errors.email}
                     onFocus={ ()=>(handlerErrors(null, 'email')) }    
                     onChangeText={ (text) => handlerOnChange(text, 'email' ) }
             />
 
-            <Input  label="CELULAR" 
+            <Input  label="Celular" 
                     iconName="cellphone-text"
                     error={errors.celular}
                     onFocus={ ()=>(handlerErrors(null, 'celular')) }    
                     onChangeText={ (text) => handlerOnChange(text, 'celular' ) }
             />
             
-            <Input  label="TELEFONE" 
+            <Input  label="Telefone" 
                     iconName="phone"
                     error={errors.telefone}
                     onFocus={ ()=>(handlerErrors(null, 'telefone')) }    
                     onChangeText={ (text) => handlerOnChange(text, 'telefone' ) }      
             />
             
-            <Input  label="NOME DO RESPONSÁVEL" 
+            <Input  label="Nome do responsável" 
                     iconName="account-multiple"      
                     error={errors.nomeResponsavel}
                     onFocus={ ()=>(handlerErrors(null, 'nomeResponsavel')) }    
                     onChangeText={ (text) => handlerOnChange(text, 'nomeResponsavel' ) }
             />
             
-            <Input  label="TELEFONE DO RESPONSÁVEL" 
+            <Input  label="Telefone do responsável" 
                     iconName="phone"      
                     error={errors.telefoneResponsavel}
                     onFocus={ ()=>(handlerErrors(null, 'telefoneResponsavel')) }    
