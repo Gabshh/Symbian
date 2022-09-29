@@ -24,7 +24,8 @@ const estilos = StyleSheet.create({
         backgroundColor:COLORS.blue,
         justifyContent:"center",
         alignItems:"center",
-        marginVertical:20,
+        marginTop:20,
+        marginBottom:50,
         elevation: 7,
     },
     title:{
