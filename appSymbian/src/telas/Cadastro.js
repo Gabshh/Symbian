@@ -184,6 +184,7 @@ const estilos = StyleSheet.create({
   },
   viewForm:{
     marginVertical:20,
+    marginBottom:69,
   },
 
 });

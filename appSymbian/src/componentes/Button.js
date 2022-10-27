@@ -25,7 +25,6 @@ const estilos = StyleSheet.create({
         justifyContent:"center",
         alignItems:"center",
         marginTop:20,
-        marginBottom:50,
         elevation: 7,
     },
     title:{
