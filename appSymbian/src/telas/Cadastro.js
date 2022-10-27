@@ -4,6 +4,7 @@ import { Text, View, StyleSheet, SafeAreaView, ScrollView } from "react-native";
 import Input from "../componentes/Input";
 import Button from "../componentes/Button";
 import COLORS from "../const/Cores";
+import apiSymbian from '../service/apiSymbian';
 
 const Cadastro = () => {
   
@@ -12,11 +13,11 @@ const Cadastro = () => {
 
   const [inputs, setInputs] = React.useState({
     nome: '',
-    email: '',
-    celular: '',
     telefone: '',
-    nomeResponsavel: '',
-    telefoneResponsavel: '',
+    celular: '',
+    email: '',
+    nome_responsavel: '',
+    telefone_responsavel: '',
   });
 
   {/***********************************************************/}
@@ -74,35 +75,33 @@ const Cadastro = () => {
       // console.log('TELEFONE EM BRANCO');
     }
 
-    // if (validate) {
-    //   //ENVIA OS DADOS PARA A API CADASTRAR
-    //   cadastrar();
-    //   console.log('cadastrou!!🤨');
-    // }
+    if (validate) {
+      //ENVIA OS DADOS PARA A API CADASTRAR
+      cadastrar();
+      console.log('paciente cadastrado!!👨🏼‍⚕️');
+    }
 
     console.log(errors);
 
   }
 
-  // const cadastrar = ()=>{
+  const cadastrar = ()=>{
     
-  //   try{
-  //     const response = apiPaciente.post('/cadastrarPacientes', 
-  //     {
-  //       nome:inputs.nome,
-  //       email:inputs.email,
-  //       celular:inputs.celular,
-  //       telefone:inputs.telefone,
-  //       nomeResponsavel:inputs.nomeResponsavel,
-  //       telefoneResponsavel:inputs.telefoneResponsavel
-  //     });
-  //   }catch(error){
-  //     console.log(error)
-  //   }
+    try{
+      const response = apiSymbian.post('/cadastrarPaciente', 
+      {
+        nome:inputs.nome,
+        email:inputs.telefone,
+        celular:inputs.celular,
+        telefone:inputs.email,
+        nome_responsavel:inputs.nome_responsavel,
+        telefone_responsavel:inputs.telefone_responsavel
+      });
+    }catch(error){
+      console.log(error)
+    }
     
-  // }
-  
-  //const nome = 'TELA DE CADASTRO';
+  }
 
     return(
 
@@ -120,11 +119,11 @@ const Cadastro = () => {
                     onChangeText={ (text) => handlerOnChange(text, 'nome' ) }
             />
 
-            <Input  label="E-mail"
-                    iconName="email"
-                    error={errors.email}
-                    onFocus={ ()=>(handlerErrors(null, 'email')) }    
-                    onChangeText={ (text) => handlerOnChange(text, 'email' ) }
+            <Input  label="Telefone" 
+                    iconName="phone"
+                    error={errors.telefone}
+                    onFocus={ ()=>(handlerErrors(null, 'telefone')) }    
+                    onChangeText={ (text) => handlerOnChange(text, 'telefone' ) }      
             />
 
             <Input  label="Celular" 
@@ -133,26 +132,26 @@ const Cadastro = () => {
                     onFocus={ ()=>(handlerErrors(null, 'celular')) }    
                     onChangeText={ (text) => handlerOnChange(text, 'celular' ) }
             />
-            
-            <Input  label="Telefone" 
-                    iconName="phone"
-                    error={errors.telefone}
-                    onFocus={ ()=>(handlerErrors(null, 'telefone')) }    
-                    onChangeText={ (text) => handlerOnChange(text, 'telefone' ) }      
+
+            <Input  label="E-mail"
+                    iconName="email"
+                    error={errors.email}
+                    onFocus={ ()=>(handlerErrors(null, 'email')) }    
+                    onChangeText={ (text) => handlerOnChange(text, 'email' ) }
             />
             
             <Input  label="Nome do responsável" 
                     iconName="account-multiple"      
-                    error={errors.nomeResponsavel}
-                    onFocus={ ()=>(handlerErrors(null, 'nomeResponsavel')) }    
-                    onChangeText={ (text) => handlerOnChange(text, 'nomeResponsavel' ) }
+                    error={errors.nome_responsavel}
+                    onFocus={ ()=>(handlerErrors(null, 'nome_responsavel')) }    
+                    onChangeText={ (text) => handlerOnChange(text, 'nome_responsavel' ) }
             />
             
             <Input  label="Telefone do responsável" 
                     iconName="phone"      
-                    error={errors.telefoneResponsavel}
-                    onFocus={ ()=>(handlerErrors(null, 'telefoneResponsavel')) }    
-                    onChangeText={ (text) => handlerOnChange(text, 'telefoneResponsavel' ) }
+                    error={errors.telefone_responsavel}
+                    onFocus={ ()=>(handlerErrors(null, 'telefone_responsavel')) }    
+                    onChangeText={ (text) => handlerOnChange(text, 'telefone_responsavel' ) }
             />
             
             <Button title="CADASTRAR" onPress={validate}/>
