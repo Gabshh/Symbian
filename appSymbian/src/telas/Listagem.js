@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Text, View, StyleSheet, SafeAreaView, ScrollView, Image, TouchableOpacity } from "react-native";
-import COLORS from "../const/Colors";
+import COLORS from "../const/Cores";
 import apiSymbian from '../service/apiSymbian';
 
 const Listagem = ()=>{
@@ -33,8 +33,22 @@ const Listagem = ()=>{
                                 <View>
                                     <Text style={estilos.nome}>{paciente.nome}</Text>
                                 </View>
+
+                                <View style={estilos.botoes}>
+
+                                    <TouchableOpacity style={estilos.botaoEditar}>
+                                        <Text style={estilos.textoBotao}>EDITAR</Text>
+                                    </TouchableOpacity>
+
+                                    <TouchableOpacity style={estilos.botaoExcluir}>
+                                        <Text style={estilos.textoBotao}>EXCLUIR</Text>
+                                    </TouchableOpacity>
+
+                                </View>
+                            
                             </TouchableOpacity>
                         )
+                        
                     )
                 }
 
@@ -66,8 +80,32 @@ const estilos = StyleSheet.create({
         fontSize:20,
         fontWeight:'bold',
         color:COLORS.white,
+    },
+    botoes:{
+        flex:1,
+        flexDirection:'row',
+        padding:10,
+        justifyContent:'center',
+    },
+    botaoExcluir:{
+        width:'50%',
+        marginLeft:7.5,
+        borderRadius:15,
+        backgroundColor:COLORS.red,
+    },
+    botaoEditar:{
+        width:'50%',
+        marginLeft:7.5,
+        borderRadius:15,
+        backgroundColor:COLORS.blue,
+    },
+    textoBotao:{
+        padding:10,
+        textAlign:'center',
+        color:COLORS.white,
+        fontWeight:'bold',
+        fontSize:16,
     }
-
 });
 
 export default Listagem;

@@ -6,7 +6,7 @@ import Button from "../componentes/Button";
 import COLORS from "../const/Cores";
 import apiSymbian from '../service/apiSymbian';
 
-const Cadastro = () => {
+const Cadastro = ({navigation}) => {
   
   {/********** CAPTURA DE DADOS COM O USO DE STATE **********
   CRIAÇÃO DA ESTRUTURA DE STATE QUE ARMAZENA OS DADOS DIGITADOS*/}
@@ -79,6 +79,7 @@ const Cadastro = () => {
       //ENVIA OS DADOS PARA A API CADASTRAR
       cadastrar();
       console.log('paciente cadastrado!!👨🏼‍⚕️');
+      navigation.navigate('Listagem');
     }
 
     console.log(errors);

@@ -8,7 +8,7 @@ const COLORS = {
     darkBlue: '#7978B5',
     darkBackground: '#202124',
     darkElement: '#312F31',
-    red: '#F00',
+    red: '#FF7070',
     errorRed: '#FF6270',
 }
 
